@@ -1,17 +1,9 @@
-import { Routes, Route } from 'react-router-dom';
-import NotFound from './pages/NotFound';
-import HomePage from './pages/HomePage';
-import "./App.css"
 
+import "./App.css"
+import DashboardLayout from "./features";
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/home" element={<HomePage />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  );
+  return <DashboardLayout />;
 }
 
 export default App;
