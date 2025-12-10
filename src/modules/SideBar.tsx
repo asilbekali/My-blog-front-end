@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Plus, Users, MessageSquare, LayoutDashboard, X, Upload, Image, Video, Search, Heart, Trash2, Edit, Eye } from 'lucide-react';
+import { Plus, Users, MessageSquare, LayoutDashboard, X, Upload, Image, Video } from 'lucide-react';
 
 const BlogAdminPanel = () => {
   const [currentPage, setCurrentPage] = useState('posts');
@@ -9,60 +9,11 @@ const BlogAdminPanel = () => {
     description: '',
     mediaType: 'imediaPreviewmage',
     mediaFile: null,
-    mediaPreview: null
+    mediaPreview: ''
   });
 
-  // Sample Data
-  const posts = [
-    {
-      id: 1,
-      image: 'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&h=600&fit=crop',
-      title: 'Beautiful Sunset',
-      description: 'Amazing sunset view from the mountains',
-      likes: 234,
-      comments: 45,
-      date: '2 hours ago',
-      author: 'John Doe'
-    },
-    {
-      id: 2,
-      image: 'https://images.unsplash.com/photo-1682687221038-404cb8830901?w=800&h=600&fit=crop',
-      title: 'City Lights',
-      description: 'Night photography of downtown',
-      likes: 189,
-      comments: 32,
-      date: '5 hours ago',
-      author: 'Jane Smith'
-    },
-    {
-      id: 3,
-      image: 'https://images.unsplash.com/photo-1682687220063-4742bd7fd538?w=800&h=600&fit=crop',
-      title: 'Nature Walk',
-      description: 'Exploring the forest trails',
-      likes: 312,
-      comments: 67,
-      date: '8 hours ago',
-      author: 'Mike Johnson'
-    }
-  ];
 
-  const users = [
-    { id: 1, name: 'John Doe', email: 'john@example.com', posts: 12, joined: '2024-01-15' },
-    { id: 2, name: 'Jane Smith', email: 'jane@example.com', posts: 8, joined: '2024-02-20' },
-    { id: 3, name: 'Mike Johnson', email: 'mike@example.com', posts: 15, joined: '2024-03-10' },
-    { id: 4, name: 'Sarah Williams', email: 'sarah@example.com', posts: 6, joined: '2024-04-05' },
-    { id: 5, name: 'Tom Brown', email: 'tom@example.com', posts: 10, joined: '2024-05-12' }
-  ];
-
-  const comments = [
-    { id: 1, user: 'John Doe', post: 'Beautiful Sunset', comment: 'Amazing photo! Love the colors', date: '1 hour ago' },
-    { id: 2, user: 'Jane Smith', post: 'City Lights', comment: 'Great shot of the city!', date: '2 hours ago' },
-    { id: 3, user: 'Mike Johnson', post: 'Nature Walk', comment: 'I want to go there!', date: '3 hours ago' },
-    { id: 4, user: 'Sarah Williams', post: 'Beautiful Sunset', comment: 'Stunning view', date: '4 hours ago' },
-    { id: 5, user: 'Tom Brown', post: 'Coffee Time', comment: 'Perfect morning vibes', date: '5 hours ago' }
-  ];
-
-  const handleFileChange = (e:any) => {
+  const handleFileChange = (e: any) => {
     const file = e.target.files[0];
     if (file) {
       setPostData({
@@ -85,7 +36,7 @@ const BlogAdminPanel = () => {
       description: '',
       mediaType: 'image',
       mediaFile: null,
-      mediaPreview: null
+      mediaPreview: ''
     });
   };
 
@@ -164,7 +115,7 @@ const BlogAdminPanel = () => {
                 <label className="block text-sm font-semibold text-gray-700 mb-3">Media Type</label>
                 <div className="flex gap-4">
                   <button
-                    onClick={() => setPostData({ ...postData, mediaType: 'image', mediaFile: null, mediaPreview: null })}
+                    onClick={() => setPostData({ ...postData, mediaType: 'image', mediaFile: null, mediaPreview: '' })}
                     className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 transition-all ${postData.mediaType === 'image' ? 'border-purple-500 bg-purple-50 text-purple-700' : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
                       }`}
                   >
@@ -172,7 +123,7 @@ const BlogAdminPanel = () => {
                     <span className="font-medium">Image</span>
                   </button>
                   <button
-                    onClick={() => setPostData({ ...postData, mediaType: 'video', mediaFile: null, mediaPreview: null })}
+                    onClick={() => setPostData({ ...postData, mediaType: 'video', mediaFile: null, mediaPreview: '' })}
                     className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 transition-all ${postData.mediaType === 'video' ? 'border-purple-500 bg-purple-50 text-purple-700' : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
                       }`}
                   >
